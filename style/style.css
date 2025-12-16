@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.upload-section, .signature-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.file-label:hover {
+    background: #0056b3;
+}
+
+.file-list {
+    margin-top: 15px;
+}
+
+.file-item {
+    padding: 8px;
+    background: #f8f9fa;
+    margin: 5px 0;
+    border-radius: 4px;
+    border-left: 3px solid #007bff;
+}
+
+.signature-preview {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.signature-preview img {
+    max-width: 200px;
+    max-height: 100px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background: white;
+}
+
+.position-controls {
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.position-controls label {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.position-controls label:hover {
+    background: #f8f9fa;
+}
+
+.position-controls input[type="radio"] {
+    margin-right: 8px;
+}
+
+h3 {
+    color: #555;
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+}
+
+.signature-controls {
+    text-align: center;
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#clearSignature {
+    background: #dc3545;
+    color: white;
+}
+
+#processDocuments {
+    background: #28a745;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.result-item {
+    padding: 15px;
+    margin: 10px 0;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    color: #155724;
+}
+
+.error {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.download-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.download-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.download-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+}
+
+.document-preview {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.preview-content {
+    width: 595px;
+    height: 842px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.pdf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: crosshair;
+    z-index: 10;
+}
+
+.size-controls {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.size-controls label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.size-controls input[type="range"] {
+    flex: 1;
+    max-width: 200px;
+}
+
+.size-info {
+    margin: 15px 0;
+    padding: 10px;
+    background: #e7f3ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.size-info span {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.preview-instruction {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.signature-marker {
+    position: absolute;
+    border: 2px solid #007bff;
+    background: rgba(0, 123, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #007bff;
+    pointer-events: none;
+    z-index: 1000;
+    box-sizing: border-box;
+}

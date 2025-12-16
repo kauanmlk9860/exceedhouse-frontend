@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assinador de Documentos</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Assinador de Documentos PDF</h1>
+        
+        <div class="upload-section">
+            <h2>Upload de Documentos</h2>
+            <input type="file" id="fileInput" multiple accept=".doc,.docx" class="file-input">
+            <label for="fileInput" class="file-label">Selecionar Arquivos .doc/.docx</label>
+            <div id="fileList" class="file-list"></div>
+        </div>
+
+        <div id="documentPreview" class="document-preview" style="display: none;">
+            <h2>Preview do Documento</h2>
+            <div id="previewContent" class="preview-content"></div>
+            <p class="preview-instruction">Clique no documento onde deseja posicionar a assinatura</p>
+        </div>
+
+        <div class="signature-section">
+            <h2>Assinatura Digital</h2>
+            <input type="file" id="signatureInput" accept=".png" class="file-input">
+            <label for="signatureInput" class="file-label">Selecionar Assinatura PNG</label>
+            <div id="signaturePreview" class="signature-preview"></div>
+            
+            <div id="sizeInfo" class="size-info" style="display: none;">
+                <p><strong>Tamanho detectado:</strong> <span id="detectedSize"></span></p>
+            </div>
+            
+            <div class="signature-controls">
+                <button id="processDocuments" style="display: none;">Processar Documentos</button>
+            </div>
+        </div>
+
+        <div id="results" class="results"></div>
+        <div id="loading" class="loading" style="display: none;">Processando...</div>
+    </div>
+
+    <script src="../js/upload.js"></script>
+</body>
+</html>
